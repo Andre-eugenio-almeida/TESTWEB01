@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation   teste site Orange
+Documentation   Esta suite testa a pagina da Orange
 Resource        orange.resource
 
 

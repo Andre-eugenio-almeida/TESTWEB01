@@ -4,8 +4,8 @@ Library    SeleniumLibrary
 
 *** Variables ***
 #CONFIGURAÇÃO
-${BROWSER}     edge      
-${URL}         https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+${BROWSER}      edge     
+${URL}          https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 #DADO DE TESTE
 ${USER_NAME}   Admin
 ${PASSWORD}    admin123
