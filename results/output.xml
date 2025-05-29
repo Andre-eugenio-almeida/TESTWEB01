@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-05-29T18:55:24.003563" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Orange" source="C:\repositorio\test_web01\test_orange.robot">
+<test id="s1-t1" name="TC01 - Acessar o site do Orange HRM" line="17">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-29T18:55:24.529001" elapsed="0.000455"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:24.530372" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T18:55:24.529826" elapsed="7.404645"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T18:55:31.934804" elapsed="0.543605"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:55:24.527111" elapsed="7.951554"/>
+</kw>
+<kw name="Verificar se a página foi aberta" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-29T18:55:32.480071" elapsed="1.046347"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:55:32.479387" elapsed="1.047243"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T18:55:33.527306" elapsed="2.709304"/>
+</kw>
+<tag>Login</tag>
+<tag>TC01</tag>
+<status status="PASS" start="2025-05-29T18:55:24.525326" elapsed="11.711708"/>
+</test>
+<test id="s1-t2" name="TC02 - Acessar o site do Orange HRM e fazer login" line="22">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-29T18:55:36.239843" elapsed="0.000369"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:36.241022" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T18:55:36.240542" elapsed="5.262900"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T18:55:41.503761" elapsed="0.540691"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:55:36.239318" elapsed="5.805402"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:42.046942" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:55:42.046233" elapsed="1.661160"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2025-05-29T18:55:42.045377" elapsed="1.662236"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:43.709165" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:55:43.708756" elapsed="1.647680"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-05-29T18:55:43.708212" elapsed="1.648519"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:45.358527" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:55:45.358005" elapsed="3.995445"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:55:45.357352" elapsed="3.996392"/>
+</kw>
+<kw name="Verificar se o login foi feito" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${BUTTON_UPGRADE}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-29T18:55:49.355073" elapsed="1.104319"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:55:49.354379" elapsed="1.105226"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T18:55:50.460251" elapsed="2.714289"/>
+</kw>
+<tag>Login</tag>
+<tag>TC02</tag>
+<status status="PASS" start="2025-05-29T18:55:36.238248" elapsed="16.936661"/>
+</test>
+<test id="s1-t3" name="TC03 - Acessar o site do Orange HRM e fazer login com username inválido" line="30">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-29T18:55:53.177620" elapsed="0.000356"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:53.178788" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T18:55:53.178315" elapsed="6.176111"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T18:55:59.354722" elapsed="0.536721"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:55:53.177103" elapsed="6.714597"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:55:59.896582" level="INFO">Typing text 'Gator' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:55:59.895440" elapsed="1.673011"/>
+</kw>
+<arg>${INVALID_USER_NAME}</arg>
+<status status="PASS" start="2025-05-29T18:55:59.894677" elapsed="1.674012"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:01.570380" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:01.569943" elapsed="1.638436"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-05-29T18:56:01.569228" elapsed="1.639348"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:03.209900" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:03.209567" elapsed="2.242831"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:03.209137" elapsed="2.243654"/>
+</kw>
+<kw name="Exibir resposta de credencial inválida" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${INVALID_CREDENTIALS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-29T18:56:05.453940" elapsed="1.742480"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:05.453351" elapsed="1.743250"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T18:56:07.197251" elapsed="2.655328"/>
+</kw>
+<tag>Login</tag>
+<tag>TC03</tag>
+<status status="PASS" start="2025-05-29T18:55:53.176176" elapsed="16.676784"/>
+</test>
+<test id="s1-t4" name="TC04 - Acessar o site do Orange HRM e fazer login com senha inválida" line="38">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-29T18:56:09.855708" elapsed="0.000269"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:09.856576" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T18:56:09.856211" elapsed="5.456248"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T18:56:15.312877" elapsed="0.549535"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:09.855300" elapsed="6.007363"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:15.864738" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:15.864099" elapsed="1.631310"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2025-05-29T18:56:15.863333" elapsed="1.632272"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:17.497512" level="INFO">Typing text 'gator123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:17.496900" elapsed="1.706489"/>
+</kw>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-29T18:56:17.496151" elapsed="1.707437"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:19.205163" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:19.204814" elapsed="1.098587"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:19.204203" elapsed="1.099406"/>
+</kw>
+<kw name="Exibir resposta de senha inválida" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${INVALID_CREDENTIALS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-29T18:56:20.305109" elapsed="4.226275"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:20.304553" elapsed="4.227021"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T18:56:24.532222" elapsed="2.647357"/>
+</kw>
+<tag>Login</tag>
+<tag>TC04</tag>
+<status status="PASS" start="2025-05-29T18:56:09.854218" elapsed="17.325744"/>
+</test>
+<test id="s1-t5" name="TC05 - Atualizar dados do usuário" line="46">
+<kw name="Abrir o navegador e acessar o site" owner="orange" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>value=0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-05-29T18:56:27.182883" elapsed="0.000422"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:27.183933" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>url=${URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T18:56:27.183566" elapsed="5.383862"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T18:56:32.567725" elapsed="0.540698"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:27.182266" elapsed="5.926347"/>
+</kw>
+<kw name="Informar o nome de usuário" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:33.111179" level="INFO">Typing text 'Admin' into text field '//Input[@name="username"]'.</msg>
+<arg>locator=${INPUT_USERNAME}</arg>
+<arg>text=${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:33.110193" elapsed="1.628207"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2025-05-29T18:56:33.109439" elapsed="1.629157"/>
+</kw>
+<kw name="Informar a senha" owner="orange">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:34.740437" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>locator=${INPUT_PASSWORD}</arg>
+<arg>text=${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:34.739845" elapsed="1.645581"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-05-29T18:56:34.739137" elapsed="1.646576"/>
+</kw>
+<kw name="Clicar no botão de login" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:36.387946" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>locator=${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:36.387427" elapsed="3.130986"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:36.386752" elapsed="3.131847"/>
+</kw>
+<kw name="Verificar se o login foi feito" owner="orange">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${BUTTON_UPGRADE}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-29T18:56:39.519686" elapsed="1.743211"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:39.519158" elapsed="1.744158"/>
+</kw>
+<kw name="Clicar na opção my info" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:41.265058" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a/span'.</msg>
+<arg>locator=${BUTTON_MY_INFO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:41.264668" elapsed="2.764727"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:41.263980" elapsed="2.765628"/>
+</kw>
+<kw name="Atualizar first name ${FIRST_NAME}" owner="orange" source_name="Atualizar first name ${first_name}">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:44.032081" level="INFO">Typing text 'André' into text field '//input[@class="oxd-input oxd-input--active orangehrm-firstname"]'.</msg>
+<arg>locator=${INPUT_FIRST_NAME_FIELD}</arg>
+<arg>text=${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:44.031517" elapsed="1.707898"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:44.030388" elapsed="1.709221"/>
+</kw>
+<kw name="Atualizar middle name ${MID_NAME}" owner="orange" source_name="Atualizar middle name ${mid_name}">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:45.741097" level="INFO">Typing text 'Tocha' into text field '//input[@name="middleName"]'.</msg>
+<arg>locator=${INPUT_MID_NAME_FIELD}</arg>
+<arg>text=${mid_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:45.740686" elapsed="1.654713"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:45.740184" elapsed="1.655404"/>
+</kw>
+<kw name="Atualizar last name ${LAST_NAME}" owner="orange" source_name="Atualizar last name ${last_name}">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:47.397085" level="INFO">Typing text 'Almeida' into text field '//input[@name="lastName"]'.</msg>
+<arg>locator=${INPUT_LAST_NAME_FIELD}</arg>
+<arg>text=${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:47.396668" elapsed="1.630766"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:47.396164" elapsed="1.631484"/>
+</kw>
+<kw name="Clicar no botão de salvar" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:49.029201" level="INFO">Clicking element '//button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]'.</msg>
+<arg>locator=${BUTTON_SAVE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:49.028868" elapsed="1.111549"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:49.028465" elapsed="1.112164"/>
+</kw>
+<kw name="Verificar se nome foi substituido com sucesso" owner="orange">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-29T18:56:50.143079" level="INFO">Clicking element '//img[@class="employee-image"]'.</msg>
+<arg>locator=${IMG_USER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T18:56:50.142288" elapsed="1.844088"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${IMG_USER}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-29T18:56:51.986661" elapsed="2.246743"/>
+</kw>
+<status status="PASS" start="2025-05-29T18:56:50.141238" elapsed="4.092360"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T18:56:54.234248" elapsed="2.661298"/>
+</kw>
+<tag>TC05</tag>
+<status status="PASS" start="2025-05-29T18:56:27.181201" elapsed="29.714701"/>
+</test>
+<doc>teste site Orange</doc>
+<status status="PASS" start="2025-05-29T18:55:24.006540" elapsed="92.890762"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">TC01</stat>
+<stat pass="1" fail="0" skip="0">TC02</stat>
+<stat pass="1" fail="0" skip="0">TC03</stat>
+<stat pass="1" fail="0" skip="0">TC04</stat>
+<stat pass="1" fail="0" skip="0">TC05</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Test Orange">Test Orange</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
